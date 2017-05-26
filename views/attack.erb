@@ -1,6 +1,6 @@
-<h1><%= @game.defender.name %> attacked <%= @game.attacker.name %></h1>
+<h1><%= @game.player_1.name %> vs. <%= @game.player_2.name %></h1>
 
-<p><%= "Opponent has #{@game.player_2.hit_points}HP!" %></p>
+<p><%= "#{@game.attacker.name} has #{@game.attacker.hit_points}HP!" %></p>
 
 <p><%= "#{@game.attacker.name}'s turn" %></p>
 
