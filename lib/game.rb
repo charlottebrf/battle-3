@@ -1,6 +1,6 @@
 class Game
 
-  attr_reader :attacker, :defender
+  attr_reader :attacker, :defender, :players
 
   def initialize(player_1, player_2)
     @players = [player_1, player_2]
@@ -15,12 +15,12 @@ class Game
 
   def switch_turns
     @defender = @attacker
-    set_attacker
+    change_attacker
   end
 
   private
 
-  def set_attacker
+  def change_attacker
     @attacker = @players.reverse[0]
   end
 
