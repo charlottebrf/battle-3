@@ -1,19 +1,11 @@
 class Game
 
-  attr_reader :player_1, :player_2, :attacker, :defender
+  attr_reader :attacker, :defender
 
   def initialize(player_1, player_2)
     @players = [player_1, player_2]
-    @attacker = player_1
-    @defender = player_2
-  end
-
-  def player_1
-    @players.first
-  end
-
-  def player_2
-    @players.last
+    @attacker = @players[0]
+    @defender = @players[1]
   end
 
   def attack(opponent)
@@ -21,16 +13,15 @@ class Game
     switch_turns
   end
 
+  def switch_turns
+    @defender = @attacker
+    set_attacker
+  end
+
   private
 
-  def switch_turns
-    if @attacker == player_1
-      @attacker = player_2
-      @defender = player_1
-    else
-      @attacker = player_1
-      @defender = player_2
-    end
+  def set_attacker
+    @attacker = @players.reverse[0]
   end
 
 end
