@@ -1,8 +1,9 @@
 <h1>BATTLE TIME</h1>
-<%= @game.player_1.name %> vs. <%= @game.player_2.name %>
+<%= @game.attacker.name %> vs. <%= @game.defender.name %>
+<br>
+<p><%= "#{@game.attacker.name}'s turn" %></p>
 <br>
 <%= "Opponent has #{@game.player_2.hit_points}HP!" %>
-<br>
 <form action="/attack" method="get">
   <input type="submit" value= "Attack!"
     name="Attack!" id="attack_submit" />

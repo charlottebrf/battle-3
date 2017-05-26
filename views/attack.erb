@@ -1,3 +1,10 @@
-<%= @game.player_1.name %> attacked <%= @game.player_2.name %>
+<h1><%= @game.defender.name %> attacked <%= @game.attacker.name %></h1>
 
-<%= "Opponent has #{@game.player_2.hit_points}HP!" %>
+<p><%= "Opponent has #{@game.player_2.hit_points}HP!" %></p>
+
+<p><%= "#{@game.attacker.name}'s turn" %></p>
+
+<form action="/play" method="get">
+  <input type="submit" value= "Attack!"
+    name="Attack!" id="attack_submit" />
+</form>

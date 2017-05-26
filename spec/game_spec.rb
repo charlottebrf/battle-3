@@ -14,7 +14,7 @@ describe Game do
 
   describe "#switch_turns" do
     it "switches the players turns" do
-      expect { game.attack(player_2) }.to change { game.current_turn }
+      expect { game.attack(player_2) }.to change { game.attacker }
     end
   end
 
